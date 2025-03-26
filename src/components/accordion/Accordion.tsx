@@ -29,7 +29,9 @@ export const Accordion = ({ question, answer }: AccordionProps) => {
         <i className="fi fi-rr-caret-down"></i>
       </AccordionBtn>
       <Panel>
-        <p>{answer}</p>
+        <p className="font-inter font-medium text-lg text-[#53545C]">
+          {answer}
+        </p>
       </Panel>
     </AccordionContainer>
   );
@@ -80,7 +82,6 @@ const Question = styled.h3`
 `;
 
 const Panel = styled.div`
-  font-family: sans-serif;
   font-size: 0.9rem;
   line-height: 1.5rem;
   background-color: white;

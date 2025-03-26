@@ -1,6 +1,6 @@
 import question from "@/assets/svgs/question.svg";
 import { Accordion } from "@/components/accordion";
-import { faqs } from "@/constants";
+import faqs from "@/data/faqs.json";
 
 export const FAQs = () => {
   return (
