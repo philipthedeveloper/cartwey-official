@@ -193,3 +193,7 @@
 body {
   background-color: var(--main-bg);
 }
+
+* {
+  scroll-behavior: smooth;
+}

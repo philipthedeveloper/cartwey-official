@@ -10,7 +10,7 @@ export const destkopNavLinks: DesktopLink[] = [
   },
   {
     name: "How It Works",
-    path: "/how-it-works",
+    path: "#how-it-works",
   },
   {
     name: "About Us",

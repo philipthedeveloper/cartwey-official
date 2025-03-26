@@ -15,7 +15,7 @@ export const DesktopNavbar = () => {
         <ul className="hidden sm:flex items-center gap-10">
           {destkopNavLinks.map(({ path, name }) => (
             <li className="font-eudoxus-medium text-black-100">
-              <Link to={path}>{name}</Link>
+              <a href={path}>{name}</a>
             </li>
           ))}
         </ul>
