@@ -9,11 +9,10 @@ type AccordionProps = {
 
 export const Accordion = ({ question, answer }: AccordionProps) => {
   const butRef = useRef<any>(null);
-  let button = this as any;
   useEffect(() => {
     butRef.current.addEventListener("click", function (e: any) {
-      button.classList.toggle("active");
-      const text = button.nextElementSibling;
+      butRef.current.classList.toggle("active");
+      const text = butRef.current.nextElementSibling;
       if (text.style.maxHeight) {
         text.style.maxHeight = "";
       } else {
