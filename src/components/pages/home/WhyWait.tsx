@@ -1,8 +1,16 @@
 import whyWait from "@/assets/svgs/why_wait.svg";
+import scanningVideoFile from "@/assets/videos/scanning_video_modal.mp4";
 
 const ScanningVideo = () => {
   return (
-    <div className="h-[350px] w-full flex-1 bg-[#0D4C3B] rounded-[8px]"></div>
+    <div className="h-[350px] w-full flex-1 bg-[#0D4C3B] rounded-[8px] overflow-hidden">
+      <video
+        src={scanningVideoFile}
+        className="w-full h-full object-cover"
+        autoPlay
+        muted
+      />
+    </div>
   );
 };
 
