@@ -24,7 +24,7 @@ export const Accordion = ({ question, answer }: AccordionProps) => {
 
   return (
     <AccordionContainer>
-      <AccordionBtn ref={butRef}>
+      <AccordionBtn ref={butRef} className="rounded-[12px]">
         <Question>{question}</Question>
         <i className="fi fi-rr-caret-down"></i>
       </AccordionBtn>
@@ -49,8 +49,6 @@ const AccordionBtn = styled.button`
   font-size: 1rem;
   cursor: pointer;
   outline: none;
-  border-top-left-radius: 0.8rem;
-  border-top-right-radius: 0.8rem;
   transition: 0.4s;
   text-align: left;
   background-color: white;
@@ -59,6 +57,7 @@ const AccordionBtn = styled.button`
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
+  box-shadow: 0px 16px 40px 0px #585c5f1a;
 
   i {
     width: 25px;
@@ -92,7 +91,7 @@ const Panel = styled.div`
   border-bottom-right-radius: 0.8rem;
 
   p {
-    padding: 1rem 1.5rem;
+    padding: 1rem 2rem;
     color: var(--black-green);
   }
 `;
