@@ -1,9 +1,9 @@
-import { Router } from "@/router/router";
+import { AppRouter } from "./router";
 
 export const App = () => {
   return (
     <>
-      <Router />
+      <AppRouter />
     </>
   );
 };

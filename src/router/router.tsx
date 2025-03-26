@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { Home, About, NotFound } from "@/pages";
 
-export const Router = () => {
+export const AppRouter = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
