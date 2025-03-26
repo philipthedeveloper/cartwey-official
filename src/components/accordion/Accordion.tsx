@@ -12,8 +12,8 @@ export const Accordion = ({ question, answer }: AccordionProps) => {
 
   useEffect(() => {
     butRef.current.addEventListener("click", function (e: any) {
-      e.target.classList.toggle("active");
-      const text = e.target.nextElementSibling;
+      this.classList.toggle("active");
+      const text = this.nextElementSibling;
       if (text.style.maxHeight) {
         text.style.maxHeight = "";
       } else {
