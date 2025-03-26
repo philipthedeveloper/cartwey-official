@@ -21,12 +21,12 @@ export const DesktopNavbar = () => {
         </ul>
 
         {/* Get started */}
-        <Link
+        <a
           className="text-white font-inter font-medium px-9 py-5 bg-[#0A4434] rounded-2xl flex justify-center items-center hover:opacity-85 duration-300 transition-colors"
-          to={"/"}
+          href={"#get-started"}
         >
           Get Started
-        </Link>
+        </a>
       </div>
     </nav>
   );

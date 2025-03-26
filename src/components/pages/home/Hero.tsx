@@ -35,12 +35,12 @@ export const Hero = () => {
 
         {/* Actions */}
         <div className="flex items-center gap-7 flex-col sm:flex-row">
-          <Link
+          <a
             className="text-white font-inter font-medium px-9 py-5 bg-[#0A4434] rounded-2xl flex justify-center items-center hover:opacity-85 duration-300 transition-colors"
-            to={"/"}
+            href={"#get-started"}
           >
             Get Started
-          </Link>
+          </a>
 
           <a className="flex items-center gap-4" href="#join-waitlist">
             <span className="text-[#0D503F] font-eudoxus-bold text-lg">

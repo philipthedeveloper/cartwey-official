@@ -5,7 +5,10 @@ import getStarted from "@/assets/svgs/get_started.svg";
 
 export const GetStarted = () => {
   return (
-    <div className="flex flex-col items-center pt-24 bg-[#0D503F]">
+    <div
+      className="flex flex-col items-center pt-24 bg-[#0D503F]"
+      id="get-started"
+    >
       <div className="flex items-center gap-6 sm:gap-10 py-2.5">
         <h2 className="font-eudoxus-bold text-white text-3xl sm:text-5xl">
           Get Started
