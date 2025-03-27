@@ -1,4 +1,3 @@
-export * from "./WhyUs";
-export * from "./Step";
+export * from "./Hero";
 export * from "./OurMission";
 export * from "./WhoWeAre";

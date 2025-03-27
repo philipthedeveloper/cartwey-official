@@ -41,8 +41,9 @@
   /* Colors */
   --main-bg: #f4faf6;
   --black-100: #1c1d22;
-  --black-60: #45464e;
   --black-90: #2c2d33;
+  --black-60: #45464e;
+  --black-40: #6e7079;
   --black-30: #8b8d97;
 
   /* Font family variables */
@@ -64,7 +65,7 @@
   --popover-foreground: oklch(0.129 0.042 264.695);
   --primary: oklch(0.208 0.042 265.755);
   --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
+  --secondary: #f9bd00;
   --secondary-foreground: oklch(0.208 0.042 265.755);
   --muted: oklch(0.968 0.007 247.896);
   --muted-foreground: oklch(0.554 0.046 257.417);
@@ -99,7 +100,7 @@
   --popover-foreground: oklch(0.984 0.003 247.858);
   --primary: oklch(0.929 0.013 255.508);
   --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
+  --secondary: #f9bd00;
   --secondary-foreground: oklch(0.984 0.003 247.858);
   --muted: oklch(0.279 0.041 260.031);
   --muted-foreground: oklch(0.704 0.04 256.788);
@@ -133,8 +134,9 @@
 
   /* Other colors */
   --color-black-100: var(--black-100);
-  --color-black-60: var(--black-60);
   --color-black-90: var(--black-90);
+  --color-black-60: var(--black-60);
+  --color-black-40: var(--black-40);
   --color-black-30: var(--black-30);
 
   /* Shadcn colors */

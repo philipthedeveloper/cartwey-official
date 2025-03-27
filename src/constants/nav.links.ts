@@ -6,7 +6,7 @@ type DesktopLink = {
 export const destkopNavLinks: DesktopLink[] = [
   {
     name: "Home",
-    path: "/home",
+    path: "/",
   },
   {
     name: "How It Works",
