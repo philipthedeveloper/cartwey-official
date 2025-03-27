@@ -7,8 +7,31 @@ import twitterIcon from "@/assets/svgs/contact-us/twitter.svg";
 import linkedinIcon from "@/assets/svgs/contact-us/linkedin.svg";
 import { Button, FormGroup } from "@/components/form";
 import paperIcon from "@/assets/svgs/paper_icon.svg";
+import * as yup from "yup";
+import { useFormik } from "formik";
+import { emailRegex } from "@/constants";
 
 export const ContactUs = () => {
+  const defaultValues = { email: "", full_name: "", message: "" };
+
+  const validationSchema = yup.object({
+    full_name: yup.string().required("Please enter full name"),
+    email: yup
+      .string()
+      .required("Please enter your email")
+      .matches(emailRegex, "Invalid email"),
+    message: yup.string().required("Please enter your message"),
+  });
+
+  const { handleSubmit, ...validation } = useFormik({
+    enableReinitialize: false,
+    initialValues: defaultValues,
+    validationSchema,
+    onSubmit: (values) => {
+      console.log(values);
+    },
+  });
+
   return (
     <div className="w-full py-30 pb-0 md:pb-20">
       <div className="w-[90%] mx-auto max-w-7xl">
@@ -65,18 +88,27 @@ export const ContactUs = () => {
 
           {/* Contact form */}
           <div className="w-full flex justify-end">
-            <form className="bg-white w-full flex flex-col max-w-[700px] gap-6 rounded-2xl py-6 md:py-10 lg:py-16 p-4 sm:p-6 md:p-9 lg:px-13">
+            <form
+              className="bg-white w-full flex flex-col max-w-[700px] gap-6 rounded-2xl py-6 md:py-10 lg:py-16 p-4 sm:p-6 md:p-9 lg:px-13"
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleSubmit();
+                return false;
+              }}
+            >
               <FormGroup
                 name="full_name"
                 label="Full Name"
                 placeholder="Enter your full name"
                 labelClassName="font-medium text-[#000000BF]"
+                validation={validation}
               />
               <FormGroup
                 name="email"
                 label="Email Address"
                 placeholder="example@example.com"
                 labelClassName="font-medium text-[#000000BF]"
+                validation={validation}
               />
               <FormGroup
                 name="message"
@@ -84,8 +116,12 @@ export const ContactUs = () => {
                 placeholder="Type here..."
                 type="textarea"
                 labelClassName="font-medium text-[#000000BF]"
+                validation={validation}
               />
-              <Button className="gap-2.5 cursor-pointer hover:opacity-80 transition-all duration-500">
+              <Button
+                className="gap-2.5 cursor-pointer hover:opacity-80 transition-all duration-500"
+                type="submit"
+              >
                 <span
                   className="font-inter font-semibold text-black text-lg"
                   style={{ letterSpacing: "2%" }}

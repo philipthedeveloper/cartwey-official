@@ -4,8 +4,58 @@ import waitlistHeaderSvg from "@/assets/svgs/waitlist_header_svg.svg";
 import { Button, FormGroup } from "@/components/form";
 import paperIcon from "@/assets/svgs/paper_icon.svg";
 import rocket from "@/assets/svgs/rocket.svg";
+import * as yup from "yup";
+import { useFormik } from "formik";
+import axios, { AxiosError } from "axios";
+import { emailRegex } from "@/constants";
+import { useState } from "react";
+import toast from "react-hot-toast";
 
 export const WaitlistForm = () => {
+  const [joiningWaitlist, setJoiningWaitlist] = useState(false);
+
+  const defaultValues = {
+    full_name: "",
+    email: "",
+  };
+
+  const validationSchema = yup.object({
+    full_name: yup.string().required("Please enter full name"),
+    email: yup
+      .string()
+      .required("Please enter your email")
+      .matches(emailRegex, "Invalid email"),
+  });
+
+  const { handleSubmit, ...validation } = useFormik({
+    enableReinitialize: false,
+    initialValues: defaultValues,
+    validationSchema,
+    onSubmit: (values) => {
+      saveToWaitlist(values);
+    },
+  });
+
+  const saveToWaitlist = async (values: any) => {
+    try {
+      setJoiningWaitlist(true);
+      const { data } = await axios.post(
+        "https://api.cartwey.com/api/waitlist/join/",
+        values
+      );
+      toast.success(data.message);
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        return toast.error(error.response?.data?.message);
+      }
+      return toast.error(
+        "Unable to join waitlist. If this error persist, please contact us."
+      );
+    } finally {
+      setJoiningWaitlist(false);
+    }
+  };
+
   return (
     <div className="rounded-3xl md:rounded-4xl w-[90%] max-w-[950px] py-10 px-5 bg-[#f1f3f91a] backdrop-blur-md">
       <div className="flex items-center flex-col gap-6">
@@ -27,25 +77,40 @@ export const WaitlistForm = () => {
           straight to your inbox.
         </p>
 
-        <form className="bg-[#0D503F] rounded-[10px] py-16 px-10 flex flex-col gap-6 w-[90%] max-w-[600px]">
+        <form
+          className="bg-[#0D503F] rounded-[10px] py-16 px-10 flex flex-col gap-6 w-[90%] max-w-[600px]"
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSubmit();
+            return false;
+          }}
+        >
           <FormGroup
             name="full_name"
             label="Full Name"
             placeholder="Enter your full name"
+            validation={validation}
+            disabled={joiningWaitlist}
           />
           <FormGroup
             name="email"
             label="Email Address"
             placeholder="example@example.com"
+            validation={validation}
+            disabled={joiningWaitlist}
           />
-          <Button className="gap-2.5 cursor-pointer hover:opacity-80 transition-all duration-500">
+          <Button
+            className="gap-2.5 cursor-pointer hover:opacity-80 transition-all duration-500"
+            type="submit"
+            disabled={joiningWaitlist}
+          >
             <span
               className="font-inter font-semibold text-black text-lg"
               style={{ letterSpacing: "2%" }}
             >
-              Join The Waitlist
+              {joiningWaitlist ? "Joining..." : "Join The Waitlist"}
             </span>
-            <img src={paperIcon} />
+            {!joiningWaitlist && <img src={paperIcon} />}
           </Button>
         </form>
 

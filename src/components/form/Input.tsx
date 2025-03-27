@@ -1,4 +1,6 @@
 import { cn } from "@/lib/utils";
+import { useFormik } from "formik";
+import { FormFeedback } from "./FormFeedback";
 
 type FormGroupProps = {
   name: string;
@@ -7,6 +9,11 @@ type FormGroupProps = {
   type?: "text" | "textarea";
   labelClassName?: string;
   inputClassName?: string;
+  disabled?: boolean;
+  validation: Pick<
+    ReturnType<typeof useFormik>,
+    "handleChange" | "handleBlur" | "errors" | "touched" | "errors"
+  >;
 };
 
 export const FormGroup = ({
@@ -16,6 +23,8 @@ export const FormGroup = ({
   type,
   labelClassName,
   inputClassName,
+  validation,
+  disabled,
 }: FormGroupProps) => {
   switch (type) {
     case "textarea":
@@ -31,6 +40,9 @@ export const FormGroup = ({
             name={name}
             id={name}
             rows={7}
+            onChange={validation.handleChange}
+            onBlur={validation.handleBlur}
+            disabled={disabled}
             className={cn(
               "px-4 py-4 font-inter text-gray-800 bg-[#E9ECF8E5] rounded-[8px] border-none outline-none placeholder:text-[#5E6366]",
               inputClassName
@@ -50,11 +62,19 @@ export const FormGroup = ({
             placeholder={placeholder}
             name={name}
             id={name}
+            onChange={validation.handleChange}
+            onBlur={validation.handleBlur}
+            disabled={disabled}
             className={cn(
               "px-4 py-4 font-inter text-gray-800 bg-[#E9ECF8E5] rounded-[8px] border-none outline-none placeholder:text-[#5E6366]",
               inputClassName
             )}
           />
+          {validation.touched[name] && validation.errors[name] ? (
+            <FormFeedback type="invalid">
+              {validation.errors[name] as string}
+            </FormFeedback>
+          ) : null}
         </div>
       );
   }
