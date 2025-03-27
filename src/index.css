@@ -42,6 +42,7 @@
   --main-bg: #f4faf6;
   --black-100: #1c1d22;
   --black-90: #2c2d33;
+  --black-80: #33343a;
   --black-60: #45464e;
   --black-40: #6e7079;
   --black-30: #8b8d97;
@@ -135,6 +136,7 @@
   /* Other colors */
   --color-black-100: var(--black-100);
   --color-black-90: var(--black-90);
+  --color-black-80: var(--black-80);
   --color-black-60: var(--black-60);
   --color-black-40: var(--black-40);
   --color-black-30: var(--black-30);

@@ -5,12 +5,12 @@ import faqs from "@/data/faqs.json";
 export const FAQs = () => {
   return (
     <div className="pt-[100px] pb-[148px]" id="faqs">
-      <div className="w-[90%] mx-auto max-w-7xl flex gap-16">
-        <div className="flex flex-col gap-18 items-center max-w-[410px]">
-          <h1 className="text-[#0D503F] font-eudoxus-bold text-5xl leading-[71px]">
+      <div className="w-[90%] mx-auto max-w-7xl flex gap-16 flex-col lg:flex-row">
+        <div className="flex flex-col gap-10 max-w-[300px] lg:max-w-[400px] items-start">
+          <h1 className="text-[#0D503F] font-eudoxus-bold text-3xl md:text-4xl lg:text-5xl lg:leading-[71px]">
             Frequently Asked Questions
           </h1>
-          <div className="bg-white rounded-full w-[300px] h-[300px]">
+          <div className="bg-white rounded-full w-[150px] h-[150px] lg:w-[250px] lg:h-[250px] hidden lg:block">
             <img src={question} />
           </div>
         </div>

@@ -62,7 +62,10 @@ export const WaitlistForm = () => {
 
 export const JoinWaitlist = () => {
   return (
-    <div className="py-24 bg-[#0D503F] relative overflow-hidden flex items-center justify-center">
+    <div
+      className="py-24 bg-[#0D503F] relative overflow-hidden flex items-center justify-center"
+      id="join-waitlist"
+    >
       {/* shape 1 */}
       <div className="absolute left-0 top-0 w-2/3 sm:w-1/2">
         <img src={waitlistBgShapeLeft} />
