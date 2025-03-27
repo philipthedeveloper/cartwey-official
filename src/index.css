@@ -197,3 +197,31 @@ body {
 * {
   scroll-behavior: smooth;
 }
+
+.slick-track {
+  display: flex !important;
+  gap: 3rem !important;
+}
+
+.slick-dots {
+  margin-bottom: -1rem !important;
+}
+
+.slick-dots li button {
+  background-color: #0d503f !important;
+  border-radius: 100% !important;
+  opacity: 0.25 !important;
+}
+
+.slick-dots li button::before {
+  color: #0d503f !important;
+  opacity: 0.25 !important;
+}
+
+.slick-dots li.slick-active button {
+  opacity: 0.75 !important;
+}
+
+.slick-dots li.slick-active button::before {
+  opacity: 0.75 !important;
+}

@@ -9,6 +9,7 @@ const ScanningVideo = () => {
         className="w-full h-full object-cover"
         autoPlay
         muted
+        loop
       />
     </div>
   );

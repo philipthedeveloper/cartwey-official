@@ -1,9 +1,9 @@
 import scanHowItWorks from "@/assets/svgs/scan_how_it_works.svg";
 import leftArrow from "@/assets/svgs/left_navigate_how.svg";
 import rightArrow from "@/assets/svgs/right_navigate_how.svg";
-import videoA from "@/assets/videos/step_1.mp4";
-import videoB from "@/assets/videos/step_2.mp4";
-import videoC from "@/assets/videos/step_3.mp4";
+import SlickSlider from "react-slick";
+import { sliderSettings, stepVideos } from "@/constants";
+import { Step } from "@/components/card";
 
 export const Slider = () => {
   return (
@@ -35,37 +35,14 @@ export const HowItWorks = () => {
           products with ease.
         </p>
 
-        <Slider />
+        {/* <Slider /> */}
       </div>
-
-      <div
-        className="grid gap-12.5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-20"
-        // style={{ gridTemplateRows: "670px" }}
-      >
-        <div className="bg-red-500 overflow-hidden">
-          <video
-            src={videoA}
-            className="w-full h-full object-contain"
-            autoPlay
-            muted
-          />
-        </div>
-        <div className="bg-green-500 overflow-hidden">
-          <video
-            src={videoB}
-            className="w-full h-full object-contain"
-            autoPlay
-            muted
-          />
-        </div>
-        <div className="bg-blue-500 overflow-hidden">
-          <video
-            src={videoC}
-            className="w-full h-full object-contain"
-            autoPlay
-            muted
-          />
-        </div>
+      <div className="w-full relative z-10 mb-[120px] mt-24">
+        <SlickSlider {...sliderSettings}>
+          {stepVideos.map((video) => (
+            <Step {...video} />
+          ))}
+        </SlickSlider>
       </div>
     </div>
   );
