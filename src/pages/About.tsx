@@ -4,8 +4,8 @@ import {
   FAQs,
   OurMission,
   WhoWeAre,
+  Footer,
 } from "@/components";
-import { Footer } from "@/components/footer";
 
 export const About = () => {
   return (

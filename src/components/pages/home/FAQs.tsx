@@ -4,7 +4,7 @@ import faqs from "@/data/faqs.json";
 
 export const FAQs = () => {
   return (
-    <div className="pt-[100px] pb-[148px]">
+    <div className="pt-[100px] pb-[148px]" id="faqs">
       <div className="w-[90%] mx-auto max-w-7xl flex gap-16">
         <div className="flex flex-col gap-18 items-center max-w-[410px]">
           <h1 className="text-[#0D503F] font-eudoxus-bold text-5xl leading-[71px]">

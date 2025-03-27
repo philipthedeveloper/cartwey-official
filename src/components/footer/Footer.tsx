@@ -10,7 +10,7 @@ export const Footer = () => {
         <div>
           <img src={footerLogo} />
           <div className="mt-10.5">
-            <p className="font-inter text-white text-lg">
+            <p className="font-inter text-white text-lg max-w-[256px]">
               Reimagining retail for a smarter shopping experience
             </p>
           </div>
@@ -23,31 +23,37 @@ export const Footer = () => {
 
         <div>
           <h5 className="text-[#F9BD00] font-inter font-bold text-2xl">Link</h5>
-          <div className="mt-10.5">
-            <p className="font-medium font-inter text-white text-lg">Home</p>
-            <p className="font-medium font-inter text-white text-lg">
-              About Us
-            </p>
-            <p className="font-medium font-inter text-white text-lg">Service</p>
-            <p className="font-medium font-inter text-white text-lg">
-              Contact Us
-            </p>
-          </div>
+          <ul className="mt-10.5">
+            <li className="font-medium font-inter text-white text-lg">
+              <a href="/">Home</a>
+            </li>
+            <li className="font-medium font-inter text-white text-lg">
+              <a href="/about">About Us</a>
+            </li>
+            <li className="font-medium font-inter text-white text-lg">
+              <a>Service</a>
+            </li>
+            <li className="font-medium font-inter text-white text-lg">
+              <a href={"/"}>Contact Us</a>
+            </li>
+          </ul>
         </div>
 
         <div>
           <h5 className="text-[#F9BD00] font-inter font-bold text-2xl">
             Contact Links
           </h5>
-          <div className="mt-10.5">
-            <p className="font-medium font-inter text-white text-lg">
-              Privacy & Policy
-            </p>
-            <p className="font-medium font-inter text-white text-lg">
-              Terms of Use
-            </p>
-            <p className="font-medium font-inter text-white text-lg">FAQs</p>
-          </div>
+          <ul className="mt-10.5">
+            <li className="font-medium font-inter text-white text-lg">
+              <a href="/privacy">Privacy & Policy</a>
+            </li>
+            <li className="font-medium font-inter text-white text-lg">
+              <a>Terms of Use</a>
+            </li>
+            <li className="font-medium font-inter text-white text-lg">
+              <a href="#faqs">FAQs</a>
+            </li>
+          </ul>
         </div>
       </div>
       <p className="text-center text-white font-inter text-lg mt-25">

@@ -18,7 +18,7 @@ export const destkopNavLinks: DesktopLink[] = [
   },
   {
     name: "FAQs",
-    path: "/faqs",
+    path: "#faqs",
   },
   {
     name: "Contact",
