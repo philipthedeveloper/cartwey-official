@@ -21,15 +21,19 @@ export const Slider = () => {
 export const HowItWorks = () => {
   return (
     <div className="w-[90%] mx-auto max-w-7xl my-20" id="how-it-works">
-      <div className="flex items-center gap-6 sm:gap-10 mb-18">
-        <h2 className="font-eudoxus-bold text-[#0D4C3B] text-3xl sm:text-5xl">
+      <div className="flex items-center gap-6 sm:gap-10 mb-5 sm:mb-15 md:mb-18 justify-center lg:justify-start">
+        <h2 className="font-eudoxus-bold text-[#0D4C3B] text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
           How it works
         </h2>
-        <img src={scanHowItWorks} alt="" />
+        <img
+          src={scanHowItWorks}
+          alt=""
+          className="w-8.5 h-8.5 sm:h-10 sm:w-10 md:h-12 md:w-12"
+        />
       </div>
 
-      <div className="flex justify-between my-5">
-        <p className="max-w-[590px] text-xl text-black-60 font-inter font-medium">
+      <div className="my-5">
+        <p className="max-w-[590px] mx-auto lg:mx-0 sm:text-xl leading-relaxed text-black-60 font-inter font-medium text-center lg:text-left">
           At Cartwey, we're dedicated to transforming your shopping experience
           by integrating cutting-edge technology that allows you to cart
           products with ease.
@@ -37,7 +41,7 @@ export const HowItWorks = () => {
 
         {/* <Slider /> */}
       </div>
-      <div className="w-full relative z-10 mb-[120px] mt-24">
+      <div className="w-full relative z-10 mb-[120px] mt-10 md:mt-24">
         <SlickSlider {...sliderSettings}>
           {stepVideos.map((video) => (
             <Step {...video} />

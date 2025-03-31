@@ -2,7 +2,7 @@ import { PropsWithChildren } from "react";
 
 export const HeadingOne = (props: PropsWithChildren) => {
   return (
-    <h1 className="text-2xl font-semibold text-black my-6 font-inter">
+    <h1 className="text-lg sm:text-2xl font-semibold text-black my-6 font-inter">
       {props.children}
     </h1>
   );

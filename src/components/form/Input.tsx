@@ -48,6 +48,11 @@ export const FormGroup = ({
               inputClassName
             )}
           />
+          {validation.touched[name] && validation.errors[name] ? (
+            <FormFeedback type="invalid">
+              {validation.errors[name] as string}
+            </FormFeedback>
+          ) : null}
         </div>
       );
     default:

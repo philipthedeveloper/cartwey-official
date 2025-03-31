@@ -24,7 +24,9 @@ export const Accordion = ({ question, answer }: AccordionProps) => {
   return (
     <AccordionContainer>
       <AccordionBtn ref={butRef} className="rounded-[12px]">
-        <Question>{question}</Question>
+        <Question className="font-eudoxus-bold text-primary text-base sm:text-lg">
+          {question}
+        </Question>
         <i className="fi fi-rr-caret-down"></i>
       </AccordionBtn>
       <Panel>
@@ -74,9 +76,7 @@ const AccordionBtn = styled.button`
 `;
 
 const Question = styled.h3`
-  font-size: 1.25rem;
   font-weight: 700;
-  color: var(--black-green);
 `;
 
 const Panel = styled.div`

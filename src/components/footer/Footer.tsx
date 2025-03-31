@@ -5,7 +5,7 @@ import linkedin from "@/assets/svgs/linkedin.svg";
 
 export const Footer = () => {
   return (
-    <div className="bg-[#0D503F] py-14 p-4 md:p-6 lg:px-14.5">
+    <div className="bg-[#0D503F] py-10 md:py-14 lg:px-14.5">
       <div className="w-[90%] mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-4">
         <div>
           <img src={footerLogo} />
@@ -16,7 +16,9 @@ export const Footer = () => {
           </div>
           <div className="mt-9 flex items-center gap-5">
             <img src={instagram} />
-            <img src={twitter} />
+            <a href="https://x.com/cartwey_app" target="_blank">
+              <img src={twitter} />
+            </a>
             <img src={linkedin} />
           </div>
         </div>

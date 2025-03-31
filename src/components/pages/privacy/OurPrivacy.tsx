@@ -2,8 +2,8 @@ import { HeadingOne, HeadingTwo, ListItem, Paragraph } from "./Typography";
 
 export const OurPrivacy = () => {
   return (
-    <div className="w-[90%] md:w-[85%] max-w-7xl mx-auto py-12 bg-white px-10 rounded-[12px] mt-10">
-      <h1 className="text-5xl text-gray-800 font-bold mb-6">
+    <div className="w-[95%] sm:w-[90%] md:w-[85%] max-w-7xl mx-auto py-12 bg-white px-4 sm:px-6 md:px-8 lg:px-10 rounded-[12px] mt-10">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-gray-800 font-bold mb-6 sm:mb-7 md:mb-8">
         Cartwey Privacy & Policy
       </h1>
       <Paragraph>

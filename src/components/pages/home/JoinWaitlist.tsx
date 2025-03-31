@@ -60,17 +60,17 @@ export const WaitlistForm = () => {
     <div className="rounded-3xl md:rounded-4xl w-[90%] max-w-[950px] py-10 px-5 bg-[#f1f3f91a] backdrop-blur-md">
       <div className="flex items-center flex-col gap-6">
         <div className="flex items-center gap-1.5 p-2.5 rounded-[10px] bg-[#5f606480]">
-          <p className="text-white font-inter font-medium">
+          <p className="text-white font-inter font-medium text-xs sm:text-sm md:text-base">
             Join the Cartwey Waitlist
           </p>
           <img src={waitlistHeaderSvg} />
         </div>
 
-        <h3 className="max-w-[690px] text-[#FFC91F] font-eudoxus-extrabold text-5xl text-center">
+        <h3 className="max-w-[690px] text-[#FFC91F] font-eudoxus-extrabold text-xl sm:text-[32px] lg:text-5xl text-center leading-normal">
           Be the First to Experience the Future of Retail Checkout
         </h3>
 
-        <p className="max-w-[690px] text-lg font-inter font-medium text-center text-[#FAFAFA]">
+        <p className="max-w-[690px] hidden sm:block text-base lg:text-lg font-inter font-medium text-center text-[#FAFAFA]">
           We’re working hard to bring you a revolutionary self-checkout
           experience. Sign up below to be the first to know when Cartwey is
           ready for launch! You'll get exclusive early access and updates
