@@ -25,9 +25,13 @@ export const GetStarted = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-5 mb-20">
-          <button className="border-none outline-none overflow-hidden w-[250px] bg-white rounded-full h-15 flex justify-center items-center">
+          <a
+            className="border-none outline-none overflow-hidden w-[250px] bg-white rounded-full h-15 flex justify-center items-center"
+            href="https://play.google.com/store/apps/details?id=com.cartwey"
+            target="_blank"
+          >
             <img src={playStore} />
-          </button>
+          </a>
           <button className="border-none outline-none overflow-hidden w-[250px] bg-[#1C1D22] rounded-full h-15 flex justify-center items-center">
             <img src={appStore} />
           </button>
